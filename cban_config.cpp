@@ -12,10 +12,16 @@ Ds18b20 ds18b20_1("ds18b20_1", ds18b20_1_parameters);
 String atlas_ph_1_parameters[] = {"99"};
 AtlasPh atlas_ph_1("atlas_ph_1", atlas_ph_1_parameters);
 
+#include <openag_atlas_ec.h>
+String atlas_ec_1_parameters[] = {"100"};
+AtlasEc atlas_ec_1("atlas_ec_1", atlas_ec_1_parameters);
+
+
 CbanHandler::CbanHandler() {
-	_num_peripherals = 3;
-	_peripheral_array = new Peripheral*[2];
+	_num_peripherals = 4;
+	_peripheral_array = new Peripheral*[4];
 	_peripheral_array[0] = &am2315_1;
 	_peripheral_array[1] = &ds18b20_1;
 	_peripheral_array[2] = &atlas_ph_1;
+	_peripheral_array[3] = &atlas_ec_1;
 }
