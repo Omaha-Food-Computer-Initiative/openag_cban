@@ -16,12 +16,16 @@ AtlasPh atlas_ph_1("atlas_ph_1", atlas_ph_1_parameters);
 String atlas_ec_1_parameters[] = {"100"};
 AtlasEc atlas_ec_1("atlas_ec_1", atlas_ec_1_parameters);
 
+#include <openag_atlas_rgb.h>
+String parameters[] = {"3"};
+AtlasRgb atlas_rgb_1("atlas_rgb_1", parameters);
 
 CbanHandler::CbanHandler() {
-	_num_peripherals = 4;
-	_peripheral_array = new Peripheral*[4];
+	_num_peripherals = 5;
+	_peripheral_array = new Peripheral*[5];
 	_peripheral_array[0] = &am2315_1;
 	_peripheral_array[1] = &ds18b20_1;
 	_peripheral_array[2] = &atlas_ph_1;
 	_peripheral_array[3] = &atlas_ec_1;
+	_peripheral_array[3] = &atlas_rgb_1;
 }
